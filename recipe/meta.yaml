@@ -10,7 +10,7 @@ source:
 build:
   skip: True  # [cuda_compiler_version == "10.2"]
   skip: True  # [cuda_compiler_version in (undefined, "None")]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   script_env:
   # Minimum supported arch of this package is 60
