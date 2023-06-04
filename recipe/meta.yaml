@@ -1,5 +1,5 @@
 {% set version = "1.0" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: tomocupy
@@ -13,7 +13,7 @@ build:
   skip: True  # [cuda_compiler_version == "10.2"]
   skip: True  # [cuda_compiler_version in (undefined, "None")]
   skip: True  # [cuda_compiler_version == "12.0"]
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
   script_env:
     - CMAKE_GENERATOR=Ninja  # [not win]
