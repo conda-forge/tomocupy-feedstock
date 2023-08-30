@@ -8,30 +8,6 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_cuda_compilernvcccuda_compiler_version11.0python3.10.____cpython:
-        CONFIG: win_64_cuda_compilernvcccuda_compiler_version11.0python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_cuda_compilernvcccuda_compil_hce383278aa
-      win_64_cuda_compilernvcccuda_compiler_version11.0python3.8.____cpython:
-        CONFIG: win_64_cuda_compilernvcccuda_compiler_version11.0python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_cuda_compilernvcccuda_compil_h2b9fe9ff51
-      win_64_cuda_compilernvcccuda_compiler_version11.0python3.9.____cpython:
-        CONFIG: win_64_cuda_compilernvcccuda_compiler_version11.0python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_cuda_compilernvcccuda_compil_h3d4aa3ca7b
-      win_64_cuda_compilernvcccuda_compiler_version11.1python3.10.____cpython:
-        CONFIG: win_64_cuda_compilernvcccuda_compiler_version11.1python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_cuda_compilernvcccuda_compil_h0628a50d07
-      win_64_cuda_compilernvcccuda_compiler_version11.1python3.8.____cpython:
-        CONFIG: win_64_cuda_compilernvcccuda_compiler_version11.1python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_cuda_compilernvcccuda_compil_h510d844ac8
-      win_64_cuda_compilernvcccuda_compiler_version11.1python3.9.____cpython:
-        CONFIG: win_64_cuda_compilernvcccuda_compiler_version11.1python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_cuda_compilernvcccuda_compil_hbcff7d2f4b
       win_64_cuda_compilernvcccuda_compiler_version11.2python3.10.____cpython:
         CONFIG: win_64_cuda_compilernvcccuda_compiler_version11.2python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -93,7 +69,7 @@ jobs:
         if EXIST LICENSE.txt (
           copy LICENSE.txt "recipe\\recipe-scripts-license.txt"
         )
-        conda.exe mambabuild "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables
+        conda.exe mambabuild "recipe" -m .ci_support\%CONFIG%.yaml --suppress-variables %EXTRA_CB_OPTIONS%
       displayName: Build recipe
       env:
         PYTHONUNBUFFERED: 1

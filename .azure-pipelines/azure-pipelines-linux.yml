@@ -8,36 +8,6 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_cuda_compilernvcccuda_compiler_version11.0cxx_compiler_version9python3.10.____cpython:
-        CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.0cxx_compiler_version9python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.0
-        SHORT_CONFIG: linux_64_cuda_compilernvcccuda_comp_he4c4dd9a2a
-      linux_64_cuda_compilernvcccuda_compiler_version11.0cxx_compiler_version9python3.8.____cpython:
-        CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.0cxx_compiler_version9python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.0
-        SHORT_CONFIG: linux_64_cuda_compilernvcccuda_comp_h9840682867
-      linux_64_cuda_compilernvcccuda_compiler_version11.0cxx_compiler_version9python3.9.____cpython:
-        CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.0cxx_compiler_version9python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.0
-        SHORT_CONFIG: linux_64_cuda_compilernvcccuda_comp_hcee005b856
-      linux_64_cuda_compilernvcccuda_compiler_version11.1cxx_compiler_version10python3.10.____cpython:
-        CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.1cxx_compiler_version10python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.1
-        SHORT_CONFIG: linux_64_cuda_compilernvcccuda_comp_he390cd1838
-      linux_64_cuda_compilernvcccuda_compiler_version11.1cxx_compiler_version10python3.8.____cpython:
-        CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.1cxx_compiler_version10python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.1
-        SHORT_CONFIG: linux_64_cuda_compilernvcccuda_comp_h07f8ed88ef
-      linux_64_cuda_compilernvcccuda_compiler_version11.1cxx_compiler_version10python3.9.____cpython:
-        CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.1cxx_compiler_version10python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cuda:11.1
-        SHORT_CONFIG: linux_64_cuda_compilernvcccuda_comp_hc43387e097
       linux_64_cuda_compilernvcccuda_compiler_version11.2cxx_compiler_version10python3.10.____cpython:
         CONFIG: linux_64_cuda_compilernvcccuda_compiler_version11.2cxx_compiler_version10python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -56,11 +26,6 @@ jobs:
   timeoutInMinutes: 360
 
   steps:
-  - script: |
-         rm -rf /opt/ghc
-         df -h
-    displayName: Manage disk space
-
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
   - script: |
