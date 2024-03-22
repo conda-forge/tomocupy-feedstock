@@ -13,8 +13,7 @@ source:
 build:
   skip: True  # [cuda_compiler_version == "10.2"]
   skip: True  # [cuda_compiler_version in (undefined, "None")]
-  skip: True  # [cuda_compiler_version == "12.0"]
-  number: 2
+  number: 3
   # scikit-build tries to find the latest MSVC compiler instead instead of using
   # cl.exe from the current environment, so on Windows we need to set the full
   # compiler paths in a script.
@@ -33,6 +32,7 @@ requirements:
     - ninja
     - swig
   host:
+    - cuda-version {{ cuda_compiler_version }}
 {% if cuda_major == 12 %}
     - cuda-cudart-dev
     - libcufft-dev
