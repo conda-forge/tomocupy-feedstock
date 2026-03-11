@@ -11,8 +11,7 @@ source:
   sha256: ecead5f526a768fd554b4a307ac0f382ff36a4bb849d366f0be64aa60145724c
 
 build:
-  skip: true  # [cuda_compiler_version == "10.2"]
-  skip: true  # [cuda_compiler_version in (undefined, "None")]
+  skip: true  # [win or cuda_compiler_version in (undefined, "None")]
   number: 0
   # scikit-build tries to find the latest MSVC compiler instead instead of using
   # cl.exe from the current environment, so on Windows we need to set the full
